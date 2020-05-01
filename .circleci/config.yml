@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.8.0a3
+      - image: circleci/python:3.8
 
     working_directory: ~/monzo-python
 
@@ -26,7 +26,7 @@ jobs:
           name: lint
           command: |
             . venv/bin/activate
-            black --py36 --check monzo/ tests
+            black --check --diff --target-version py38 monzo/ tests
       - run:
           name: run tests
           command: |
