@@ -2,7 +2,7 @@
 
 It's been a while since I've written Python as my primary language, not to mention life and work doesn't allow me to spend enough time on this project. Please feel free to fork and continue the work. As for the `monzo` namespace for `PyPy`, I'll be keeping a hold of it for security reasons.
 
-[![CircleCI](https://circleci.com/gh/muyiwaolu/monzo-python/tree/dev.svg?style=svg)](https://circleci.com/gh/muyiwaolu/monzo-python/tree/dev)
+[![CircleCI](https://circleci.com/gh/babolivier/monzo-python/tree/dev.svg?style=svg)](https://circleci.com/gh/babolivier/monzo-python/tree/dev)
 # monzo-python
 
 ## Requirements
