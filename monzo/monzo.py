@@ -25,9 +25,7 @@ class Monzo(object):
        :param access_token: The access token to authorise API calls.
     """
 
-    API_URL = (
-        "https://api.monzo.com/"
-    )  #: (str): A representation of the current Monzo api url.
+    API_URL = "https://api.monzo.com/"  #: (str): A representation of the current Monzo api url.
 
     def __init__(self, access_token):
         """Starts an OAuth session with just an access token
