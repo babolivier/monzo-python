@@ -167,8 +167,8 @@ class MonzoOAuth2Client(object):
 
         token = self.session.fetch_token(
             MonzoOAuth2Client._access_token_url,
-            username=self.client_id,
-            password=self.client_secret,
+            client_id=self.client_id,
+            client_secret=self.client_secret,
             code=code,
         )
 
