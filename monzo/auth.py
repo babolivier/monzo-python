@@ -42,6 +42,7 @@ class MonzoOAuth2Client(object):
     _request_token_url = "{0}/oauth2/token".format(API_ENDPOINT)
     _access_token_url = _request_token_url
     _refresh_token_url = _request_token_url
+    _invalidate_token_url = "{0}/oauth2/logout".format(API_ENDPOINT)
 
     _localhost = "http://localhost"
 
@@ -195,6 +196,18 @@ class MonzoOAuth2Client(object):
             self.session.token_updater(token)
 
         return token
+
+    def invalidate_token(self):
+        """Invalidate the current token."""
+        res = self.make_request(MonzoOAuth2Client._invalidate_token_url, method="POST")
+
+        # Update the token with an empty dict so the oauth client doesn't get confused
+        # and try to refresh the existing one (since the refresh token also gets
+        # invalidated).
+        if self.session.token_updater:
+            self.session.token_updater({})
+
+        return res
 
     def validate_response(self, response):
         """Validate the response and raises any appropriate errors.
