@@ -243,13 +243,15 @@ class Monzo(object):
         response = self.request.post(url, data=data)
         return response
 
-    def get_pots(self):
+    def get_pots(self, current_account_id):
         """Get all pots for a user. (https://monzo.com/docs/#list-pots)
+
+            :param current_account_id: The unique identifier for the current account the pot is associated with.
 
            :rtype: A collection of pots for a user.
 
         """
-        url = "{0}/pots".format(self.API_URL)
+        url = "{0}/pots?current_account_id={1}".format(self.API_URL, current_account_id)
         response = self.oauth_session.make_request(url)
         return response
 
